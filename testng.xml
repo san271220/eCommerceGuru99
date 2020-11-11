@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestNG Listeners" parallel="none">
+ 
+     <listeners>
+       <listener class-name="practise.TestListener"/>
+  </listeners>
+    
+    
+    
+    
+    <test name="Login Test">
+    
+     <parameter name="browser" value="chrome"> </parameter>
+ 
+   
+        <classes>
+    
+        <class name="tests.LoginTests"/>
+     
+  
+        </classes>
+        
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
