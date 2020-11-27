@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [TestNG Listeners]" parallel="tests">
+  <parameter name="browser" value="chrome"/>
+  <test name="Mobile Test(failed)" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <groups>
+      <run>
+        <include name="functional"/>
+        <exclude name="mobile"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="tests.OrderTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="commonTearDown"/>
+          <include name="setUp"/>
+          <include name="commonSetUp"/>
+        </methods>
+      </class> <!-- tests.OrderTest -->
+      <class name="tests.MobileTest">
+        <methods>
+          <include name="commonTearDown"/>
+          <include name="commonSetUp"/>
+          <include name="verifyMobilePrice"/>
+        </methods>
+      </class> <!-- tests.MobileTest -->
+    </classes>
+  </test> <!-- Mobile Test(failed) -->
+</suite> <!-- Failed suite [TestNG Listeners] -->

@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="TestNG Listeners" parallel="none">
+<suite name="TestNG Listeners" parallel="tests" thread-count="2" >
+
  
-     <listeners>
+    <!--  <listeners>
        <listener class-name="practise.TestListener"/>
-  </listeners>
-    
-    
-    
-    
-    <test name="Login Test">
-    
+  </listeners> -->
+       
+    <test name="Mobile Test">
      <parameter name="browser" value="chrome"> </parameter>
- 
-   
-        <classes>
-    
-        <class name="tests.LoginTests"/>
-     
+         <groups>
+	     <run>
+		<include name="functional"></include>
+		<exclude name="mobile"></exclude>
+	</run>
+</groups> 
+        <classes>   
+        <class name="tests.MobileTest"></class>
+        </classes>        
+  </test> 
   
-        </classes>
-        
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+  
+  <test name="Login Test">
+     <parameter name="browser" value="chrome"> </parameter>
+        <classes>   
+        <class name="tests.OrderTest"></class>
+        </classes>        
+  </test> 
+</suite> 

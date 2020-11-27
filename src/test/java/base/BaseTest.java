@@ -31,7 +31,7 @@ public class BaseTest {
     protected CategoryFilterPage category;*/
     
 
-    @BeforeClass()
+    @BeforeClass(alwaysRun=true)
 
     @Parameters({"browser"})
     public void commonSetUp(String browser) {
@@ -47,8 +47,8 @@ public class BaseTest {
         login = nav.login();
     }
 
-    @AfterClass
+    @AfterClass(alwaysRun=true)
     public void commonTearDown() {
-        driver.quit();
+        //driver.quit();
     }
 }

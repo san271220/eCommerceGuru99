@@ -25,7 +25,7 @@ public class MobileTest extends BaseTest {
     
    
 
-    @Test
+    @Test(groups={"functional","mobile"})
     public void verifyMobileNameOrder() {
           mob=nav.mobileLink(); 
          List<String>mobileName=mob.mobiledd();
@@ -33,7 +33,7 @@ public class MobileTest extends BaseTest {
          Assert.assertTrue(result);
     }
     
-    @Test
+    @Test(groups={"functional","price"})
     public void verifyMobilePrice() {
           mob=nav.mobileLink(); 
          Boolean result=mob.mobilePrice();
